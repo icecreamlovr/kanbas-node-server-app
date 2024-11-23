@@ -39,7 +39,11 @@ export default function WorkingWithArrays(app) {
   app.get("/lab5/todos/:id/delete", (req, res) => {
     const { id } = req.params;
     const todoIndex = todos.findIndex((t) => t.id === parseInt(id));
+    // console.log(">>>");
+    // console.log(todos);
+    // console.log(todoIndex);
     todos.splice(todoIndex, 1);
+    // console.log(todos);
     res.json(todos);
   });
   app.delete("/lab5/todos/:id", (req, res) => {
